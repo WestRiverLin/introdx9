@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\common\d3dApp.cpp" />
+    <ClCompile Include="..\src\common\dxerr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\common\d3dApp.h" />
+    <ClInclude Include="..\src\common\d3dUtil.h" />
+    <ClInclude Include="..\src\common\dxerr.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+Introduction to 3D Game Programming with DirectX 9.0c - A Shader Approach
+
+ * My sandbox, for fun
+ * VS2012
+ 
+Dependency:
+ * D3DX9, extracts from DXSDK
+ * dxerr, http://blogs.msdn.com/b/chuckw/archive/2012/04/24/where-s-dxerr-lib.aspx
+ 
