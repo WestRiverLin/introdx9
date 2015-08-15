@@ -142,6 +142,14 @@ int D3DApp::run()
 {
 	MSG msg;
 	msg.message = WM_NULL;
+
+	__int64 cntsPerSec = 0;
+	QueryPerformanceFrequency((LARGE_INTEGER*)&cntsPerSec);
+	float secsPerCnt = 1.0f / (float)cntsPerSec;
+
+	__int64 prevTimeStamp = 0;
+	QueryPerformanceCounter((LARGE_INTEGER*)&prevTimeStamp);
+
 	while (msg.message != WM_QUIT)
 	{
 		if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
@@ -162,8 +170,14 @@ int D3DApp::run()
 
 			if (!isDeviceLost())
 			{
-				updateScene(0.0f);
+				__int64 currTimeStamp = 0;
+				QueryPerformanceCounter((LARGE_INTEGER*)&currTimeStamp);
+				float dt = (currTimeStamp - prevTimeStamp)*secsPerCnt;
+
+				updateScene(dt);
 				drawScene();
+
+				prevTimeStamp = currTimeStamp;
 			}
 		}
 	}
