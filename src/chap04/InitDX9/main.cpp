@@ -36,12 +36,6 @@ InitDX9App::InitDX9App(HINSTANCE hInstance, std::wstring winCaption, D3DDEVTYPE 
 {
 	srand(time_t(0));
 
-	if (!checkDeviceCaps())
-	{
-		MessageBox(0, L"checkDeviceCaps() failed", 0, 0);
-		PostQuitMessage(0);
-	}
-
 	D3DXFONT_DESC fontDesc;
 	fontDesc.Height          = 80;
 	fontDesc.Width           = 40;

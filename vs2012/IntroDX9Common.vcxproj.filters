@@ -3,10 +3,12 @@
   <ItemGroup>
     <ClCompile Include="..\src\common\d3dApp.cpp" />
     <ClCompile Include="..\src\common\dxerr.cpp" />
+    <ClCompile Include="..\src\common\gfxStats.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\common\d3dApp.h" />
     <ClInclude Include="..\src\common\d3dUtil.h" />
     <ClInclude Include="..\src\common\dxerr.h" />
+    <ClInclude Include="..\src\common\gfxStats.h" />
   </ItemGroup>
 </Project>

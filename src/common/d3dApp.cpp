@@ -26,6 +26,12 @@ D3DApp::D3DApp(HINSTANCE hInstance, std::wstring winCaption, D3DDEVTYPE devType,
 
 	initMainWindow();
 	initDirect3D();
+
+	if (!checkDeviceCaps())
+	{
+		MessageBox(0, L"checkDeviceCaps() failed", 0, 0);
+		PostQuitMessage(0);
+	}
 }
 
 D3DApp::~D3DApp()
