@@ -16,6 +16,7 @@ public:
 
 private:
 	ID3DXFont* mFont;
+	ID3DXLine* mLine;
 };
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, int showCmd)
@@ -53,11 +54,14 @@ InitDX9App::InitDX9App(HINSTANCE hInstance, std::wstring winCaption, D3DDEVTYPE 
 	wcscpy_s(fontDesc.FaceName, LF_FACESIZE, L"Times New Roman");
 
 	HR(D3DXCreateFontIndirect(gd3dDevice, &fontDesc, &mFont));
+
+	HR(D3DXCreateLine(gd3dDevice, &mLine));
 }
 
 InitDX9App::~InitDX9App()
 {
 	SafeRelease(mFont);
+	SafeRelease(mLine);
 }
 
 bool InitDX9App::checkDeviceCaps()
@@ -68,10 +72,12 @@ bool InitDX9App::checkDeviceCaps()
 void InitDX9App::onLostDevice()
 {
 	HR(mFont->OnLostDevice());
+	HR(mLine->OnLostDevice());
 }
 
 void InitDX9App::onResetDevice()
 {
+	HR(mFont->OnResetDevice());
 	HR(mFont->OnResetDevice());
 }
 
@@ -90,6 +96,15 @@ void InitDX9App::drawScene()
 
 	mFont->DrawText(0, L"Hello Direct3D 9", -1, &formatRect, DT_CENTER | DT_VCENTER,
 		D3DCOLOR_XRGB(rand() % 256, rand() % 256, rand() % 256));
+
+	D3DXVECTOR2 line[] = {
+		D3DXVECTOR2(0,0),
+		D3DXVECTOR2(100.0f, 100.0f),
+		D3DXVECTOR2(100.0f, 200.0f),
+	};
+	mLine->Begin();
+	mLine->Draw(line, 3, D3DCOLOR_XRGB(255,0,0));
+	mLine->End();
 
 	HR(gd3dDevice->EndScene());
 	HR(gd3dDevice->Present(0, 0, 0, 0));
