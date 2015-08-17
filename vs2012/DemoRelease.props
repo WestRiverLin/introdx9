@@ -16,7 +16,8 @@
       <AdditionalDependencies>d3d9.lib;d3dx9.lib;IntroDX9Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(SolutionDir)..\3rdparty\d3dx9sdk\Lib\x86\d3dx9_42.dll $(SolutionDir)</Command>
+      <Command>copy $(SolutionDir)..\3rdparty\d3dx9sdk\Lib\x86\d3dx9_42.dll $(SolutionDir)
+copy $(SolutionDir)..\3rdparty\d3dx9sdk\Lib\x86\d3dx9_42.dll $(OutDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup />
