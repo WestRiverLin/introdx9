@@ -1,6 +1,5 @@
 #include "d3dApp.h"
 #include <string.h>
-#include <crtdbg.h>
 
 class InitDX9App : public D3DApp
 {

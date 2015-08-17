@@ -1,7 +1,6 @@
 #include "d3dApp.h"
 #include "gfxStats.h"
 #include <string.h>
-#include <crtdbg.h>
 
 class GfxStatsDemo : public D3DApp
 {

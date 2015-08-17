@@ -7,6 +7,9 @@
 #ifndef D3D_DEBUG_INFO
 #define D3D_DEBUG_INFO
 #endif
+
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
 #endif
 
 #include <d3d9.h>
