@@ -44,6 +44,7 @@ PageFlipDemo::PageFlipDemo(HINSTANCE hInstance, std::wstring winCaption, D3DDEVT
 
 	HR(D3DXCreateSprite(gd3dDevice, &mSprite));
 	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap05/PageFlipDemo/fireatlas.bmp", &mFrames));
+	mSpriteCenter = D3DXVECTOR3(32.0f, 32.0f, 0.0f);
 
 	mCurrFrame = 0;
 

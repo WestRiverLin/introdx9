@@ -63,7 +63,7 @@ void GfxStatsDemo::updateScene(float dt)
 
 void GfxStatsDemo::drawScene()
 {
-	HR(gd3dDevice->Clear(0, 0, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(255,255,255), 1.0f, 0));
+	HR(gd3dDevice->Clear(0, 0, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(0,0,0), 1.0f, 0));
 	HR(gd3dDevice->BeginScene());
 
 	mGfxStats->display();
