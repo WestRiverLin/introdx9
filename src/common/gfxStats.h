@@ -20,7 +20,7 @@ public:
 	void setVertexCount(DWORD n);
 
 	void update(float dt);
-	void display();
+	void display(D3DCOLOR c = D3DCOLOR_XRGB(255,255,255));
 
 private:
 	GfxStats(const GfxStats& rhs);

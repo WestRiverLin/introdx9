@@ -62,7 +62,7 @@ void GfxStats::update(float dt)
 	}
 }
 
-void GfxStats::display()
+void GfxStats::display(D3DCOLOR c)
 {
 	static char buffer[256];
 
@@ -72,5 +72,5 @@ void GfxStats::display()
 		"Vertex Count = %d", mFPS, mMilliSecPerFrame, mNumTris, mNumVertices);
 
 	RECT R = {5,5,0,0};
-	HR(mFont->DrawTextA(0, buffer, -1, &R, DT_NOCLIP, D3DCOLOR_XRGB(255,255,255)));
+	HR(mFont->DrawTextA(0, buffer, -1, &R, DT_NOCLIP, c));
 }

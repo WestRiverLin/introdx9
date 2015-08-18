@@ -6,7 +6,7 @@
 class D3DApp
 {
 public:
-	D3DApp(HINSTANCE hInstance, std::wstring winCaption, D3DDEVTYPE devType, DWORD requestedVP);
+	D3DApp(HINSTANCE hInstance, std::wstring winCaption, D3DDEVTYPE devType = D3DDEVTYPE_HAL, DWORD requestedVP = D3DCREATE_HARDWARE_VERTEXPROCESSING);
 	virtual ~D3DApp();
 
 	HINSTANCE getAppInst();

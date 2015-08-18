@@ -6,7 +6,7 @@
 class DirectInput
 {
 public:
-	DirectInput(DWORD keyboardCoopFlags, DWORD mouseCoopFlags);
+	DirectInput(DWORD keyboardCoopFlags = DISCL_FOREGROUND|DISCL_NONEXCLUSIVE, DWORD mouseCoopFlags = DISCL_FOREGROUND|DISCL_NONEXCLUSIVE);
 	~DirectInput();
 
 	void poll();

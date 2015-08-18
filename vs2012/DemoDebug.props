@@ -14,7 +14,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)..\lib\$(Configuration)\;$(SolutionDir)..\3rdparty\d3dx9sdk\Lib\x86</AdditionalLibraryDirectories>
-      <AdditionalDependencies>d3d9.lib;d3dx9d.lib;dinput8.lib;IntroDX9Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d9.lib;d3dx9d.lib;dinput8.lib;dxguid.lib;IntroDX9Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy $(SolutionDir)..\3rdparty\d3dx9sdk\Lib\x86\d3dx9d_42.dll $(SolutionDir)
