@@ -42,7 +42,7 @@ void GfxStats::subVertices(DWORD n)     { mNumVertices -= n; }
 void GfxStats::addTriangles(DWORD n)    { mNumTris += n;     }
 void GfxStats::subTriangles(DWORD n)    { mNumTris -= n;     }
 void GfxStats::setTriCount(DWORD n)     { mNumTris = n;      }
-void GfxStats::setVertexCount(DWORD n)  { mNumVertices = 0;  }
+void GfxStats::setVertexCount(DWORD n)  { mNumVertices = n;  }
 
 void GfxStats::update(float dt)
 {
