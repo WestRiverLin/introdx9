@@ -12,9 +12,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\common\d3dApp.cpp" />
+    <ClCompile Include="..\src\common\d3dUtil.cpp" />
     <ClCompile Include="..\src\common\directInput.cpp" />
     <ClCompile Include="..\src\common\dxerr.cpp" />
     <ClCompile Include="..\src\common\gfxStats.cpp" />
+    <ClCompile Include="..\src\common\Vertex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\common\d3dApp.h" />
@@ -22,6 +24,7 @@
     <ClInclude Include="..\src\common\directInput.h" />
     <ClInclude Include="..\src\common\dxerr.h" />
     <ClInclude Include="..\src\common\gfxStats.h" />
+    <ClInclude Include="..\src\common\Vertex.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8CBCA9DB-773D-47FE-B794-B082B5CD4EA4}</ProjectGuid>

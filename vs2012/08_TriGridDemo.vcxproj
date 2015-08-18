@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{965BAB35-6F88-47DB-935A-8F5E4DA9B8C0}</ProjectGuid>
+    <ProjectGuid>{35191F56-65E8-4B10-8FB4-75779A7B1D52}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My07_CubeDemo</RootNamespace>
+    <RootNamespace>My08_TriGridDemo</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,7 +78,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\chap07\CubeDemo\CubeDemo.cpp" />
+    <FxCompile Include="..\src\chap08\TriGridDemo\transform.fx">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\chap08\TriGridDemo\TriGridDemo.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

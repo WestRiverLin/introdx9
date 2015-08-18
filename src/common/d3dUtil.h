@@ -17,6 +17,7 @@
 #include "dxerr.h"
 #include <string>
 #include <sstream>
+#include <vector>
 
 class D3DApp;
 extern D3DApp *gd3dApp;
@@ -41,3 +42,7 @@ extern IDirect3DDevice9* gd3dDevice;
 	#define HR(x) (x)
 	#endif
 #endif
+
+
+void GenTriGrid(int numVertRows, int numVertCols, float dx, float dz, 
+				const D3DXVECTOR3 &center, std::vector<D3DXVECTOR3> &verts, std::vector<DWORD> &indices);
