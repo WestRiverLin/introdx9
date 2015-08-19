@@ -99,14 +99,14 @@ void ColoredCubeDemo::buildVertexBuffer()
 	VertexCol *v = 0;
 	HR(mVB->Lock(0, 0, (void**)&v, 0));
 
-	v[0] = VertexCol(-1.0f, -1.0f, -1.0f, 0xff00ff00);
-	v[1] = VertexCol(-1.0f,  1.0f, -1.0f, 0xff00ff00);
-	v[2] = VertexCol( 1.0f,  1.0f, -1.0f, 0xff00ff00);
-	v[3] = VertexCol( 1.0f, -1.0f, -1.0f, 0xff00ff00);
-	v[4] = VertexCol(-1.0f, -1.0f,  1.0f, 0xff00ff00);
-	v[5] = VertexCol(-1.0f,  1.0f,  1.0f, 0xff00ff00);
-	v[6] = VertexCol( 1.0f,  1.0f,  1.0f, 0xff00ff00);
-	v[7] = VertexCol( 1.0f, -1.0f,  1.0f, 0xff00ff00);
+	v[0] = VertexCol(-1.0f, -1.0f, -1.0f, WHITE);
+	v[1] = VertexCol(-1.0f,  1.0f, -1.0f, BLACK);
+	v[2] = VertexCol( 1.0f,  1.0f, -1.0f, RED);
+	v[3] = VertexCol( 1.0f, -1.0f, -1.0f, GREEN);
+	v[4] = VertexCol(-1.0f, -1.0f,  1.0f, BLUE);
+	v[5] = VertexCol(-1.0f,  1.0f,  1.0f, YELLOW);
+	v[6] = VertexCol( 1.0f,  1.0f,  1.0f, CYAN);
+	v[7] = VertexCol( 1.0f, -1.0f,  1.0f, MAGENTA);
 
 	HR(mVB->Unlock());
 }
