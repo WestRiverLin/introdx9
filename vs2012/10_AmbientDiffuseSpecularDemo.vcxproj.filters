@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\chap10\AmbientDiffuseSpecularDemo\AmbientDiffuseSpecularDemo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="fx">
+      <UniqueIdentifier>{9c9aa5ae-d6fc-4a2d-b37c-c33aec22f41c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\src\chap10\AmbientDiffuseSpecularDemo\ambientdiffusespec.fx">
+      <Filter>fx</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
