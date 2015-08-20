@@ -7,6 +7,13 @@ uniform extern float4 gDiffuseMtrl;
 uniform extern float4 gDiffuseLight;
 uniform extern float3 gLightVecW;
 
+float DiffuseToonIt(float s)
+{
+	if (s <= 0.25) return 0.4;
+	else if (s <= 0.85) return 0.6;
+	else return 1.f;
+}
+
 struct OutputVS
 {
 	float4 posH  : POSITION0;
@@ -23,6 +30,7 @@ OutputVS DiffuseVS(float3 posL : POSITION0, float3 normalL : NORMAL0)
 
 	// Compute ambient + diffuse color
 	float s = max(dot(gLightVecW, normalW), 0.0f);
+	s = DiffuseToonIt(s);
 	float3 diffuse = s*(gDiffuseMtrl*gDiffuseLight).rgb;
 	float3 ambient = gAmbientMtrl*gAmbientLight;
 	outVS.color.rgb = ambient + diffuse;
