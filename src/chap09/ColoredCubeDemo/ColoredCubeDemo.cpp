@@ -80,7 +80,7 @@ ColoredCubeDemo::~ColoredCubeDemo()
 	SafeRelease(mVB);
 	SafeRelease(mIB);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 void ColoredCubeDemo::buildVertexBuffer()

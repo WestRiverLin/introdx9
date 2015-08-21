@@ -85,7 +85,7 @@ TriGridDemo::~TriGridDemo()
 	SafeRelease(mIB);
 	SafeRelease(mFX);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 bool TriGridDemo::checkDeviceCaps()

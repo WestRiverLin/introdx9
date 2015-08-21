@@ -111,7 +111,7 @@ PhongDemo::~PhongDemo()
 	SafeRelease(mTeapot);
 	SafeRelease(mFX);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 bool PhongDemo::checkDeviceCaps()

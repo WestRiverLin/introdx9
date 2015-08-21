@@ -75,7 +75,7 @@ CubeDemo::~CubeDemo()
 	SafeRelease(mVB);
 	SafeRelease(mIB);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 void CubeDemo::buildVertexBuffer()

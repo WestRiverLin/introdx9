@@ -96,7 +96,7 @@ DiffusePyramidDemo::~DiffusePyramidDemo()
 	SafeRelease(mVB);
 	SafeRelease(mFX);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 bool DiffusePyramidDemo::checkDeviceCaps()

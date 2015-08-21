@@ -100,7 +100,7 @@ AmbientDiffuseDemo::~AmbientDiffuseDemo()
 	SafeRelease(mTeapot);
 	SafeRelease(mFX);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 bool AmbientDiffuseDemo::checkDeviceCaps()

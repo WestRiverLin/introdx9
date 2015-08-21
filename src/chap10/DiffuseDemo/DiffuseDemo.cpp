@@ -94,7 +94,7 @@ DiffuseDemo::~DiffuseDemo()
 	SafeRelease(mTeapot);
 	SafeRelease(mFX);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 bool DiffuseDemo::checkDeviceCaps()

@@ -101,7 +101,7 @@ ToonDemo::~ToonDemo()
 	SafeRelease(mTeapot);
 	SafeRelease(mFX);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 bool ToonDemo::checkDeviceCaps()

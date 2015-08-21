@@ -111,7 +111,7 @@ AmbientDiffuseSpecularDemo::~AmbientDiffuseSpecularDemo()
 	SafeRelease(mTeapot);
 	SafeRelease(mFX);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 bool AmbientDiffuseSpecularDemo::checkDeviceCaps()

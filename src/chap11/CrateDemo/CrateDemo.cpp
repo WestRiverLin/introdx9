@@ -122,7 +122,7 @@ CrateDemo::~CrateDemo()
 	SafeRelease(mCrateTex);
 	SafeRelease(mFX);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 bool CrateDemo::checkDeviceCaps()

@@ -47,4 +47,4 @@ struct VertexPNT
 };
 
 void InitAllVertexDeclarations();
-void DestroyAllVertexDeclaration();
+void DestroyAllVertexDeclarations();

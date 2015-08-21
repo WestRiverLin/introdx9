@@ -108,7 +108,7 @@ MeshDemo::~MeshDemo()
 	SafeRelease(mCylinder);
 	SafeRelease(mSphere);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 bool MeshDemo::checkDeviceCaps()

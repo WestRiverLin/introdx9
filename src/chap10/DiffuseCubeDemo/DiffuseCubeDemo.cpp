@@ -101,7 +101,7 @@ DiffuseCubeDemo::~DiffuseCubeDemo()
 	SafeRelease(mIB);
 	SafeRelease(mFX);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 bool DiffuseCubeDemo::checkDeviceCaps()

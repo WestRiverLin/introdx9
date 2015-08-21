@@ -89,7 +89,7 @@ ColoredWavesDemo::~ColoredWavesDemo()
 	SafeRelease(mIB);
 	SafeRelease(mFX);
 
-	DestroyAllVertexDeclaration();
+	DestroyAllVertexDeclarations();
 }
 
 bool ColoredWavesDemo::checkDeviceCaps()

@@ -36,7 +36,7 @@ void InitAllVertexDeclarations()
 	HR(gd3dDevice->CreateVertexDeclaration(VertexPNTElems, &VertexPNT::Decl));
 }
 
-void DestroyAllVertexDeclaration()
+void DestroyAllVertexDeclarations()
 {
 	SafeRelease(VertexPos::Decl);
 	SafeRelease(VertexCol::Decl);
