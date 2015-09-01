@@ -43,8 +43,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "09_ColoredCubeDemo", "09_Co
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "09_ColoredWavesDemo", "09_ColoredWavesDemo.vcxproj", "{61567706-E4A1-468E-A098-918EAE12D368}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8CBCA9DB-773D-47FE-B794-B082B5CD4EA4} = {8CBCA9DB-773D-47FE-B794-B082B5CD4EA4}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10_DiffuseDemo", "10_DiffuseDemo.vcxproj", "{C63F8F04-DD71-4406-B345-664A010E9E0F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8CBCA9DB-773D-47FE-B794-B082B5CD4EA4} = {8CBCA9DB-773D-47FE-B794-B082B5CD4EA4}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10_DiffuseCubeDemo", "10_DiffuseCubeDemo.vcxproj", "{37D62912-AB1B-42D0-AB09-D7B348CF6D08}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -72,6 +78,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10_PhongDemo", "10_PhongDem
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10_ToonDemo", "10_ToonDemo.vcxproj", "{36A8F379-3D58-4DC3-9313-D4CCF75E9788}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8CBCA9DB-773D-47FE-B794-B082B5CD4EA4} = {8CBCA9DB-773D-47FE-B794-B082B5CD4EA4}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "11_CrateDemo", "11_CrateDemo.vcxproj", "{78A60406-9151-4CB7-8E1D-7C9354E9A996}"
 	ProjectSection(ProjectDependencies) = postProject
