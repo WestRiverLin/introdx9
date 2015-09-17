@@ -17,12 +17,8 @@
       <AdditionalDependencies>d3d9.lib;d3dx9.lib;dinput8.lib;dxguid.lib;IntroDX9Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>IF NOT EXIST $(SolutionDir)d3dx9d_42.dll (
-  copy $(SolutionDir)..\3rdparty\d3dx9sdk\Lib\x86\d3dx9_42.dll $(SolutionDir)
-)
-IF NOT EXIST $(OutDir)d3dx9d_42.dll (
-  copy $(SolutionDir)..\3rdparty\d3dx9sdk\Lib\x86\d3dx9_42.dll $(OutDir)
-)</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup />
