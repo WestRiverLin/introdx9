@@ -76,7 +76,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
 
-	TeapotDemo app(hInstance, L"Teapot Demo");
+	TeapotDemo app(hInstance, L"Teapot with Texture Alpha");
 	gd3dApp = &app;
 
 	DirectInput dinput;
