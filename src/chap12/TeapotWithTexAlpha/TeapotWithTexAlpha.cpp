@@ -375,6 +375,7 @@ void TeapotDemo::drawCrate()
 		HR(gd3dDevice->DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 0, 24, 0, 12));
 		HR(mFX->EndPass());
 	}
+	HR(mFX->End());
 }
 
 void TeapotDemo::drawTeapot()

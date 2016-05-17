@@ -68,6 +68,13 @@ private:
 
 	D3DXMATRIX mView;
 	D3DXMATRIX mProj;
+
+	enum {
+		BLEND_EXAMPLE_1 = 0,
+		BLEND_EXAMPLE_2,
+		BLEND_EXAMPLE_3,
+		BLEND_EXAMPLE_4
+	} mBlendExample;
 };
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, int showCmd)
@@ -113,6 +120,8 @@ TeapotDemo::TeapotDemo(HINSTANCE hInstance, std::wstring winCaption)
 	mTeapotMtrl.diffuse   = D3DXCOLOR(1.0f, 1.0f, 1.0f, 0.5f);
 	mTeapotMtrl.spec      = D3DXCOLOR(0.8f, 0.8f, 0.8f, 1.0f);
 	mTeapotMtrl.specPower = 16.0f;
+
+	mBlendExample = BLEND_EXAMPLE_4;
 
 	// Set the crate back a bit
 	D3DXMatrixTranslation(&mCrateWorld, 0.0f, 0.0f, 2.0f);
@@ -188,6 +197,15 @@ void TeapotDemo::updateScene(float dt)
 		mCameraHeight += 25.0f * dt;
 	if (gDInput->keyDown(DIK_S))
 		mCameraHeight -= 25.0f * dt;
+
+	if (gDInput->keyDown(DIK_F1))
+		mBlendExample = BLEND_EXAMPLE_1;
+	else if (gDInput->keyDown(DIK_F2))
+		mBlendExample = BLEND_EXAMPLE_2;
+	else if (gDInput->keyDown(DIK_F3))
+		mBlendExample = BLEND_EXAMPLE_3;
+	else if (gDInput->keyDown(DIK_F4))
+		mBlendExample = BLEND_EXAMPLE_4;
 
 	// divide by 50 to make mouse less sensitive
 	mCameraRotationY += gDInput->mouseDX() / 100.0f;
@@ -375,17 +393,47 @@ void TeapotDemo::drawCrate()
 		HR(gd3dDevice->DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 0, 24, 0, 12));
 		HR(mFX->EndPass());
 	}
+	HR(mFX->End());
 }
 
 void TeapotDemo::drawTeapot()
 {
 	// Cylindrically interpolate texture coordinates
-	HR(gd3dDevice->SetRenderState(D3DRS_WRAP0, D3DWRAPCOORD_0));
+	//HR(gd3dDevice->SetRenderState(D3DRS_WRAP0, D3DWRAPCOORD_0));
 
 	// Enable alpha blending
 	HR(gd3dDevice->SetRenderState(D3DRS_ALPHABLENDENABLE, true));
-	HR(gd3dDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA));
-	HR(gd3dDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA));
+
+	switch (mBlendExample)
+	{
+	case BLEND_EXAMPLE_1:
+		{
+		HR(gd3dDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_ZERO));
+		HR(gd3dDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_ONE));
+		}
+		break;
+
+	case BLEND_EXAMPLE_2:
+		{
+		HR(gd3dDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_ONE));
+		HR(gd3dDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_ONE));
+		}
+		break;
+
+	case BLEND_EXAMPLE_3:
+		{
+		HR(gd3dDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_ZERO));
+		HR(gd3dDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_SRCALPHA));
+		}
+		break;
+
+	default:
+		{
+		HR(gd3dDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA));
+		HR(gd3dDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA));
+		}
+		break;
+	}
 
 	HR(mFX->SetValue(mhAmbientMtrl, &mTeapotMtrl.ambient, sizeof(D3DXCOLOR)));
 	HR(mFX->SetValue(mhDiffuseMtrl, &mTeapotMtrl.diffuse, sizeof(D3DXCOLOR)));
@@ -410,7 +458,7 @@ void TeapotDemo::drawTeapot()
 	}
 	HR(mFX->End());
 
-	HR(gd3dDevice->SetRenderState(D3DRS_WRAP0, 0));
+	//HR(gd3dDevice->SetRenderState(D3DRS_WRAP0, 0));
 	HR(gd3dDevice->SetRenderState(D3DRS_ALPHABLENDENABLE, false));
 }
 
