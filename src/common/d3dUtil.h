@@ -18,6 +18,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <float.h>
 
 class D3DApp;
 extern D3DApp *gd3dApp;
@@ -86,3 +87,34 @@ void LoadXFile(
 	ID3DXMesh** meshOut,
 	std::vector<Material>& materials,
 	std::vector<IDirect3DTexture9*>& textures);
+
+//===============================================================
+// Math Constants
+
+const float INFINITY = FLT_MAX;
+const float EPSILON  = 0.001f;
+
+//===============================================================
+// Bounding Volumes
+
+struct AABB
+{
+	AABB() : minPt(INFINITY, INFINITY, INFINITY), maxPt(-INFINITY, -INFINITY, -INFINITY) {}
+
+	D3DXVECTOR3 center()
+	{
+		return 0.5f*(minPt + maxPt);
+	}
+
+	D3DXVECTOR3 minPt;
+	D3DXVECTOR3 maxPt;
+};
+
+struct BoundingSphere
+{
+	BoundingSphere() : pos(0.0f, 0.0f, 0.0f), radius(0.0f) {}
+
+	D3DXVECTOR3 pos;
+	float radius;
+};
+
