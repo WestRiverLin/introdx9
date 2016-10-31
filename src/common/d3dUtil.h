@@ -69,3 +69,20 @@ struct Material
 	D3DXCOLOR spec;
 	float specPower;
 };
+
+struct DirLight
+{
+	D3DXCOLOR ambient;
+	D3DXCOLOR diffuse;
+	D3DXCOLOR spec;
+	D3DXVECTOR3 dirW;
+};
+
+//===============================================================
+// .X Files
+
+void LoadXFile(
+	const std::wstring& filename,
+	ID3DXMesh** meshOut,
+	std::vector<Material>& materials,
+	std::vector<IDirect3DTexture9*>& textures);
