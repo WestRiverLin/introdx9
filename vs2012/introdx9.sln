@@ -93,6 +93,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "11_TileGroundDemo", "11_Til
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "12_TeapotDemo", "12_TeapotDemo.vcxproj", "{468AC1E7-E52B-471F-8D4A-47E8DFDA1AF6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8CBCA9DB-773D-47FE-B794-B082B5CD4EA4} = {8CBCA9DB-773D-47FE-B794-B082B5CD4EA4}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "12_TeapotWithTexAlpha", "12_TeapotWithTexAlpha.vcxproj", "{8AAAD5E7-582D-4F69-85CF-C20ED0E681FB}"
 	ProjectSection(ProjectDependencies) = postProject
