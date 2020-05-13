@@ -1,4 +1,7 @@
 #include "d3dApp.h"
+#include <string>
+
+using namespace std;
 
 D3DApp *gd3dApp = 0;
 IDirect3DDevice9 *gd3dDevice = 0;
@@ -138,17 +141,44 @@ void D3DApp::initDirect3D()
 		&gd3dDevice));      // return created device
 }
 
+void D3DApp::CalculateFrameStats()
+{
+	// Code computes the average frames per second, and also the 
+	// average time it takes to render one frame.  These stats 
+	// are appended to the window caption bar.
+    
+	static int frameCnt = 0;
+	static float timeElapsed = 0.0f;
+
+	frameCnt++;
+
+	// Compute averages over one second period.
+	if( (mTimer.TotalTime() - timeElapsed) >= 1.0f )
+	{
+		float fps = (float)frameCnt; // fps = frameCnt / 1
+		float mspf = 1000.0f / fps;
+
+        wstring fpsStr = to_wstring(fps);
+        wstring mspfStr = to_wstring(mspf);
+
+        wstring windowText = mMainWndCaption +
+            L"    fps: " + fpsStr +
+            L"   mspf: " + mspfStr;
+
+        SetWindowText(mhMainWnd, windowText.c_str());
+		
+		// Reset for next average.
+		frameCnt = 0;
+		timeElapsed += 1.0f;
+	}
+}
+
 int D3DApp::run()
 {
 	MSG msg;
 	msg.message = WM_NULL;
 
-	__int64 cntsPerSec = 0;
-	QueryPerformanceFrequency((LARGE_INTEGER*)&cntsPerSec);
-	float secsPerCnt = 1.0f / (float)cntsPerSec;
-
-	__int64 prevTimeStamp = 0;
-	QueryPerformanceCounter((LARGE_INTEGER*)&prevTimeStamp);
+	mTimer.Reset();
 
 	while (msg.message != WM_QUIT)
 	{
@@ -159,6 +189,8 @@ int D3DApp::run()
 		}
 		else
 		{
+			mTimer.Tick();
+
 			// If the application is paused then free some CPU
 			// cycles to other applications and then continue on
 			// to the next frame
@@ -170,14 +202,9 @@ int D3DApp::run()
 
 			if (!isDeviceLost())
 			{
-				__int64 currTimeStamp = 0;
-				QueryPerformanceCounter((LARGE_INTEGER*)&currTimeStamp);
-				float dt = (currTimeStamp - prevTimeStamp)*secsPerCnt;
-
-				updateScene(dt);
+				CalculateFrameStats();
+				updateScene(mTimer.DeltaTime());
 				drawScene();
-
-				prevTimeStamp = currTimeStamp;
 			}
 		}
 	}
