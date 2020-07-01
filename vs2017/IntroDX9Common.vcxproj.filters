@@ -7,6 +7,7 @@
     <ClCompile Include="..\src\common\directInput.cpp" />
     <ClCompile Include="..\src\common\d3dUtil.cpp" />
     <ClCompile Include="..\src\common\Vertex.cpp" />
+    <ClCompile Include="..\src\common\GameTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\common\d3dApp.h" />
@@ -15,5 +16,6 @@
     <ClInclude Include="..\src\common\gfxStats.h" />
     <ClInclude Include="..\src\common\directInput.h" />
     <ClInclude Include="..\src\common\Vertex.h" />
+    <ClInclude Include="..\src\common\GameTimer.h" />
   </ItemGroup>
 </Project>
