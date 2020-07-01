@@ -1,5 +1,6 @@
 #pragma once
 
+#include "GameTimer.h"
 #include "d3dUtil.h"
 #include <string>
 
@@ -32,11 +33,16 @@ public:
 	bool isDeviceLost();
 
 protected:
+	void CalculateFrameStats();
+
+protected:
 	// Derived client class can modify these data members in the constructor to
 	// customize the application.
 	std::wstring mMainWndCaption;
 	D3DDEVTYPE   mDevType;
 	DWORD        mRequestedVP;
+
+	GameTimer mTimer;
 
 	HINSTANCE mhAppInst;
 	HWND mhMainWnd;

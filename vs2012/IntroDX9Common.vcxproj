@@ -15,6 +15,7 @@
     <ClCompile Include="..\src\common\d3dUtil.cpp" />
     <ClCompile Include="..\src\common\directInput.cpp" />
     <ClCompile Include="..\src\common\dxerr.cpp" />
+    <ClCompile Include="..\src\common\GameTimer.cpp" />
     <ClCompile Include="..\src\common\gfxStats.cpp" />
     <ClCompile Include="..\src\common\Vertex.cpp" />
   </ItemGroup>
@@ -23,6 +24,7 @@
     <ClInclude Include="..\src\common\d3dUtil.h" />
     <ClInclude Include="..\src\common\directInput.h" />
     <ClInclude Include="..\src\common\dxerr.h" />
+    <ClInclude Include="..\src\common\GameTimer.h" />
     <ClInclude Include="..\src\common\gfxStats.h" />
     <ClInclude Include="..\src\common\Vertex.h" />
   </ItemGroup>
