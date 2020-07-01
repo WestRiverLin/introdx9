@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\chap10\PhongDemo\PhongDemo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="fx">
+      <UniqueIdentifier>{be7ff36a-c2d7-4b7a-9c43-3cd6331bc6ff}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\src\chap10\PhongDemo\phong.fx">
+      <Filter>fx</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>

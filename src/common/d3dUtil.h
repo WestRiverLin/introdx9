@@ -91,15 +91,15 @@ void LoadXFile(
 //===============================================================
 // Math Constants
 
-const float INFINITY = FLT_MAX;
-const float EPSILON  = 0.001f;
+const float MY_INFINITY = FLT_MAX;
+const float MY_EPSILON  = 0.001f;
 
 //===============================================================
 // Bounding Volumes
 
 struct AABB
 {
-	AABB() : minPt(INFINITY, INFINITY, INFINITY), maxPt(-INFINITY, -INFINITY, -INFINITY) {}
+	AABB() : minPt(MY_INFINITY, MY_INFINITY, MY_INFINITY), maxPt(-MY_INFINITY, -MY_INFINITY, -MY_INFINITY) {}
 
 	D3DXVECTOR3 center()
 	{

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\chap12\TeapotDemo\TeapotDemo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="fx">
+      <UniqueIdentifier>{d33ec142-0fde-4932-bc73-4fccb4c5c91a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\src\chap12\TeapotDemo\DirLightTex.fx">
+      <Filter>fx</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>

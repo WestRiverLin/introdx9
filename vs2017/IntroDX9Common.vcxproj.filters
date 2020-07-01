@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\common\d3dApp.cpp" />
+    <ClCompile Include="..\src\common\dxerr.cpp" />
+    <ClCompile Include="..\src\common\gfxStats.cpp" />
+    <ClCompile Include="..\src\common\directInput.cpp" />
+    <ClCompile Include="..\src\common\d3dUtil.cpp" />
+    <ClCompile Include="..\src\common\Vertex.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\common\d3dApp.h" />
+    <ClInclude Include="..\src\common\d3dUtil.h" />
+    <ClInclude Include="..\src\common\dxerr.h" />
+    <ClInclude Include="..\src\common\gfxStats.h" />
+    <ClInclude Include="..\src\common\directInput.h" />
+    <ClInclude Include="..\src\common\Vertex.h" />
+  </ItemGroup>
+</Project>
