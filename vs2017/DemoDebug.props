@@ -3,8 +3,8 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <OutDir>$(SolutionDir)..\bin\</OutDir>
-    <IntDir>$(SolutionDir)..\build\$(ProjectName)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)..\bin\$(PlatformShortName)\</OutDir>
+    <IntDir>$(SolutionDir)..\build\$(PlatformShortName)\$(ProjectName)_$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_$(Configuration)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup>
@@ -13,7 +13,7 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\lib\$(Configuration)\;$(SolutionDir)..\3rdparty\d3dx9sdk\Lib\x86</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\lib\$(PlatformShortName)\$(Configuration)\;$(SolutionDir)..\3rdparty\d3dx9sdk\Lib\$(PlatformShortName)\</AdditionalLibraryDirectories>
       <AdditionalDependencies>d3d9.lib;d3dx9d.lib;dinput8.lib;dxguid.lib;IntroDX9Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
