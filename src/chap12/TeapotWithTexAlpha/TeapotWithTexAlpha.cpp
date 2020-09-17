@@ -118,8 +118,8 @@ TeapotDemo::TeapotDemo(HINSTANCE hInstance, std::wstring winCaption)
 	D3DXMatrixTranslation(&mCrateWorld, 0.0f, 0.0f, 2.0f);
 	D3DXMatrixIdentity(&mTeapotWorld);
 
-	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap12/TeapotWithTexAlpha/crate.jpg", &mCrateTex));
-	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap12/TeapotWithTexAlpha/bricka.dds", &mTeapotTex));
+	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../../src/chap12/TeapotWithTexAlpha/crate.jpg", &mCrateTex));
+	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../../src/chap12/TeapotWithTexAlpha/bricka.dds", &mTeapotTex));
 	
 	HR(D3DXCreateTeapot(gd3dDevice, &mTeapot, 0));
 
@@ -308,7 +308,7 @@ void TeapotDemo::buildBoxGeometry()
 void TeapotDemo::buildFX()
 {
 	ID3DXBuffer *errors = 0;
-	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../src/chap12/TeapotWithTexAlpha/DirLightTex.fx",
+	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../../src/chap12/TeapotWithTexAlpha/DirLightTex.fx",
 		0, 0, D3DXSHADER_DEBUG, 0, &mFX, &errors));
 	if (errors)
 		MessageBoxA(0, (char*)errors->GetBufferPointer(), 0, 0);

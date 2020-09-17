@@ -87,10 +87,10 @@ XFileDemo::XFileDemo(HINSTANCE hInstance, std::wstring winCaption)
 	mLight.diffuse = D3DXCOLOR(0.8f, 0.8f, 0.8f, 1.0f);
 	mLight.spec    = D3DXCOLOR(0.8f, 0.8f, 0.8f, 1.0f);
 
-	LoadXFile(L"../src/chap14/XFileDemo/Dwarf.x", &mMesh, mMtrl, mTex);
+	LoadXFile(L"../../src/chap14/XFileDemo/Dwarf.x", &mMesh, mMtrl, mTex);
 	D3DXMatrixIdentity(&mWorld);
 
-	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap14/XFileDemo/whitetex.dds", &mWhiteTex));
+	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../../src/chap14/XFileDemo/whitetex.dds", &mWhiteTex));
 
 	mGfxStats->addVertices(mMesh->GetNumVertices());
 	mGfxStats->addTriangles(mMesh->GetNumFaces());
@@ -214,7 +214,7 @@ void XFileDemo::drawScene()
 void XFileDemo::buildFX()
 {
 	ID3DXBuffer *errors = 0;
-	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../src/chap14/XFileDemo/PhongDirLtTex.fx",
+	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../../src/chap14/XFileDemo/PhongDirLtTex.fx",
 		0, 0, D3DXSHADER_DEBUG, 0, &mFX, &errors));
 	if (errors)
 		MessageBoxA(0, (char*)errors->GetBufferPointer(), 0, 0);

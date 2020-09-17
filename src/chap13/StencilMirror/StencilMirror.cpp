@@ -115,10 +115,10 @@ StencilMirrorDemo::StencilMirrorDemo(HINSTANCE hInstance, std::wstring winCaptio
 	D3DXMatrixIdentity(&mRoomWorld);
 	D3DXMatrixTranslation(&mTeapotWorld, 0.0f, 3.0f, -6.0f);
 
-	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap13/StencilMirror/checkboard.dds", &mFloorTex));
-	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap13/StencilMirror/brick2.dds", &mWallTex));
-	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap13/StencilMirror/ice.dds", &mMirrorTex));
-	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap13/StencilMirror/brick1.dds", &mTeapotTex));
+	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../../src/chap13/StencilMirror/checkboard.dds", &mFloorTex));
+	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../../src/chap13/StencilMirror/brick2.dds", &mWallTex));
+	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../../src/chap13/StencilMirror/ice.dds", &mMirrorTex));
+	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../../src/chap13/StencilMirror/brick1.dds", &mTeapotTex));
 	
 	HR(D3DXCreateTeapot(gd3dDevice, &mTeapot, 0));
 
@@ -293,7 +293,7 @@ void StencilMirrorDemo::buildRoomGeometry()
 void StencilMirrorDemo::buildFX()
 {
 	ID3DXBuffer *errors = 0;
-	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../src/chap13/StencilMirror/DirLightTex.fx",
+	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../../src/chap13/StencilMirror/DirLightTex.fx",
 		0, 0, D3DXSHADER_DEBUG, 0, &mFX, &errors));
 	if (errors)
 		MessageBoxA(0, (char*)errors->GetBufferPointer(), 0, 0);

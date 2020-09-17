@@ -234,7 +234,7 @@ void ColoredCubeDemo::drawScene()
 void ColoredCubeDemo::buildFX()
 {
 	ID3DXBuffer *errors = 0;
-	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../src/chap09/ColoredCubeDemo/color.fx",
+	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../../src/chap09/ColoredCubeDemo/color.fx",
 		0, 0, D3DXSHADER_DEBUG, 0, &mFX, &errors));
 	if (errors)
 		MessageBoxA(0, (char*)errors->GetBufferPointer(), 0, 0);

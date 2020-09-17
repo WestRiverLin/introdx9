@@ -123,11 +123,11 @@ RobotArmDemo::RobotArmDemo(HINSTANCE hInstance, std::wstring winCaption)
 	mLight.diffuse = D3DXCOLOR(0.8f, 0.8f, 0.8f, 1.0f);
 	mLight.spec    = D3DXCOLOR(0.8f, 0.8f, 0.8f, 1.0f);
 
-	LoadXFile(L"../src/chap15/RobotArmDemo/bone.x", &mBoneMesh, mMtrl, mTex);
+	LoadXFile(L"../../src/chap15/RobotArmDemo/bone.x", &mBoneMesh, mMtrl, mTex);
 	D3DXMatrixIdentity(&mWorld);
 
 	// Create the white dummy texture
-	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap15/RobotArmDemo/whitetex.dds", &mWhiteTex));
+	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../../src/chap15/RobotArmDemo/whitetex.dds", &mWhiteTex));
 
 	// Initialize the bones relative to their parent frame.
 	// The root is special--its parent frame is the world space.
@@ -297,7 +297,7 @@ void RobotArmDemo::drawScene()
 void RobotArmDemo::buildFX()
 {
 	ID3DXBuffer *errors = 0;
-	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../src/chap15/RobotArmDemo/PhongDirLtTex.fx",
+	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../../src/chap15/RobotArmDemo/PhongDirLtTex.fx",
 		0, 0, D3DXSHADER_DEBUG, 0, &mFX, &errors));
 	if (errors)
 		MessageBoxA(0, (char*)errors->GetBufferPointer(), 0, 0);

@@ -103,7 +103,7 @@ CrateDemo::CrateDemo(HINSTANCE hInstance, std::wstring winCaption)
 
 	D3DXMatrixIdentity(&mWorld);
 
-	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap11/CrateDemo/crate.jpg", &mCrateTex));
+	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../../src/chap11/CrateDemo/crate.jpg", &mCrateTex));
 	
 	buildBoxGeometry();
 	buildFX();
@@ -306,7 +306,7 @@ void CrateDemo::buildBoxGeometry()
 void CrateDemo::buildFX()
 {
 	ID3DXBuffer *errors = 0;
-	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../src/chap11/CrateDemo/DirLightTex.fx",
+	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../../src/chap11/CrateDemo/DirLightTex.fx",
 		0, 0, D3DXSHADER_DEBUG, 0, &mFX, &errors));
 	if (errors)
 		MessageBoxA(0, (char*)errors->GetBufferPointer(), 0, 0);

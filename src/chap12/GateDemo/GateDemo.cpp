@@ -123,8 +123,8 @@ GateDemo::GateDemo(HINSTANCE hInstance, std::wstring winCaption)
 	D3DXMatrixIdentity(&mGroundWorld);
 	D3DXMatrixIdentity(&mGateWorld);
 
-	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap12/GateDemo/ground0.dds", &mGroundTex));
-	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap12/GateDemo/gatea.dds", &mGateTex));
+	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../../src/chap12/GateDemo/ground0.dds", &mGroundTex));
+	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../../src/chap12/GateDemo/gatea.dds", &mGateTex));
 
 	buildGridGeometry();
 	buildGateGeometry();
@@ -337,7 +337,7 @@ void GateDemo::buildFX()
 {
 	// Create the FX from a .fx file.
 	ID3DXBuffer* errors = 0;
-	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../src/chap12/GateDemo/DirLightTex.fx", 
+	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../../src/chap12/GateDemo/DirLightTex.fx", 
 		0, 0, D3DXSHADER_DEBUG, 0, &mFX, &errors));
 	if( errors )
 		MessageBoxA(0, (char*)errors->GetBufferPointer(), 0, 0);

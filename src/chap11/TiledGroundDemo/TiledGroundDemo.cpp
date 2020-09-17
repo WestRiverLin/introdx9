@@ -116,7 +116,7 @@ TiledGroundDemo::TiledGroundDemo(HINSTANCE hInstance, std::wstring winCaption)
 
 	D3DXMatrixIdentity(&mWorld);
 
-	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../src/chap11/TiledGroundDemo/ground0.dds", &mGroundTex));
+	HR(D3DXCreateTextureFromFile(gd3dDevice, L"../../src/chap11/TiledGroundDemo/ground0.dds", &mGroundTex));
 
 	buildGridGeometry();
 	mGfxStats->addVertices(mNumGridVertices);
@@ -311,7 +311,7 @@ void TiledGroundDemo::buildFX()
 {
 	// Create the FX from a .fx file.
 	ID3DXBuffer* errors = 0;
-	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../src/chap11/TiledGroundDemo/DirLightTex.fx", 
+	HR(D3DXCreateEffectFromFile(gd3dDevice, L"../../src/chap11/TiledGroundDemo/DirLightTex.fx", 
 		0, 0, D3DXSHADER_DEBUG, 0, &mFX, &errors));
 	if( errors )
 		MessageBoxA(0, (char*)errors->GetBufferPointer(), 0, 0);
